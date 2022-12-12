@@ -10,14 +10,14 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import dagger.android.support.DaggerAppCompatActivity
-import de.monau.databinding.ActivityMainBinding
+import de.monau.databinding.ActivityDictionaryBinding
 import javax.inject.Inject
 import javax.inject.Named
 
-class PrimaryActivity : DaggerAppCompatActivity() {
+class DictionaryActivity : DaggerAppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityDictionaryBinding
 
     @Inject
     @Named("AppModule")
@@ -30,7 +30,7 @@ class PrimaryActivity : DaggerAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityDictionaryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)

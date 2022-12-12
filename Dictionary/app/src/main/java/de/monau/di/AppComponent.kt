@@ -5,7 +5,6 @@ import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import de.monau.BaseApplication
-import de.monau.PrimaryActivity
 import javax.inject.Singleton
 
 @Singleton

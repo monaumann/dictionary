@@ -2,11 +2,11 @@ package de.monau.di
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import de.monau.PrimaryActivity
+import de.monau.DictionaryActivity
 
 @Module
 abstract class ActivityBuildersModule {
 
     @ContributesAndroidInjector
-    abstract fun contributePrimaryActivity() : PrimaryActivity
+    abstract fun contributeDictionaryActivity() : DictionaryActivity
 }
