@@ -7,12 +7,4 @@ import javax.inject.Named
 
 @Module
 class AppModule {
-
-    @Provides
-    @Named("AppModule")
-    fun provideString(): String = "AppModule"
-
-    @Provides
-    @Named("Blub")
-    fun provideBlub(): String = "Blub"
 }

@@ -1,7 +1,6 @@
 package de.monau
 
 import android.os.Bundle
-import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -10,9 +9,10 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import dagger.android.support.DaggerAppCompatActivity
+import de.monau.constants.*
 import de.monau.databinding.ActivityDictionaryBinding
+import de.monau.utils.StorageHelper
 import javax.inject.Inject
-import javax.inject.Named
 
 class DictionaryActivity : DaggerAppCompatActivity() {
 
@@ -20,12 +20,7 @@ class DictionaryActivity : DaggerAppCompatActivity() {
     private lateinit var binding: ActivityDictionaryBinding
 
     @Inject
-    @Named("AppModule")
-    lateinit var someString: String
-
-    @Inject
-    @Named("Blub")
-    lateinit var blub: String
+    lateinit var storageHelper: StorageHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,11 +36,11 @@ class DictionaryActivity : DaggerAppCompatActivity() {
 
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+                .setAction("Action", null).show()
         }
 
-        Log.d("development", "String 1 = $someString")
-        Log.d("development", "String 2 = $blub")
+        storageHelper.writeLines(this, listOf(SER, ESTAR, IR))
+        storageHelper.readVerb(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
