@@ -38,7 +38,7 @@ class VerbHelper @Inject constructor() {
                 vosotros = splitVerbs[VOSOTROS_INDEX],
                 ellos = splitVerbs[ELLOS_INDEX],
                 type = splitLine[TYPE_INDEX],
-            ).also { it.print() }
+            )
         } else null
     }
 }
