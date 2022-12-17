@@ -39,8 +39,8 @@ class DictionaryActivity : DaggerAppCompatActivity() {
                 .setAction("Action", null).show()
         }
 
-        storageHelper.writeLines(this, listOf(SER, ESTAR, IR))
-        storageHelper.readVerb(this)
+        storageHelper.writeLines(this, listOf(HABLAR, SER, ESTAR, IR))
+        storageHelper.readVerbs(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

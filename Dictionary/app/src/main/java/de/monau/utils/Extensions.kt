@@ -5,7 +5,7 @@ import de.monau.models.Verb
 
 fun Verb.print() {
     Log.d("development", "-------------------------")
-    Log.d("development", "Infinitive: $infinitiveEs -> $type")
+    Log.d("development", "$infinitiveEs ($type)")
     Log.d("development", "Yo $yo")
     Log.d("development", "Tú $tu")
     Log.d("development", "El $el")
