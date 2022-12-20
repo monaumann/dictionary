@@ -1,19 +1,24 @@
 package de.monau
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import dagger.android.support.DaggerFragment
+import de.monau.adapters.ConjugationAdapter
 import de.monau.databinding.FragmentVerbBinding
+import javax.inject.Inject
 
-class VerbFragment : Fragment() {
+class VerbFragment : DaggerFragment() {
 
     private var _binding: FragmentVerbBinding? = null
 
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
+
+    @Inject
+    lateinit var adapter: ConjugationAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

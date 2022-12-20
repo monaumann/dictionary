@@ -15,7 +15,7 @@
 
     <TextView
         android:id="@+id/conjugation"
-        android:layout_width="@dimen/person_width"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="conjugation"
         tools:ignore="HardcodedText" />
