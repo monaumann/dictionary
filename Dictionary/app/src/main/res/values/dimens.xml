@@ -1,4 +1,4 @@
 <resources>
     <dimen name="medium_margin">16dp</dimen>
-    <dimen name="person_width">96dp</dimen>
+    <dimen name="person_width">120dp</dimen>
 </resources>

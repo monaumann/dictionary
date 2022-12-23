@@ -11,6 +11,7 @@
         android:layout_width="@dimen/person_width"
         android:layout_height="wrap_content"
         android:text="Person:"
+        android:textAppearance="@style/Dictionary.Subtitle"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -18,6 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="conjugation"
+        android:textAppearance="@style/Dictionary.Info"
         tools:ignore="HardcodedText" />
 
 </LinearLayout>

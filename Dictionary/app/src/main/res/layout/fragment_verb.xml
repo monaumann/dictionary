@@ -12,13 +12,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/medium_margin"
         android:text="Infinitive"
+        android:textAppearance="@style/Dictionary.Title"
         tools:ignore="HardcodedText" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/item_verb_person"
-        android:layout_marginBottom="@dimen/medium_margin" />
+        android:layout_marginBottom="@dimen/medium_margin"
+        tools:listitem="@layout/item_verb_person" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

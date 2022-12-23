@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Dictionary">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Dictionary.Title">
+        <item name="android:textSize">@dimen/text_size_l</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Dictionary.Subtitle">
+        <item name="android:textSize">@dimen/text_size_m</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Dictionary.Info">
+        <item name="android:textSize">@dimen/text_size_m</item>
+    </style>
+</resources>
