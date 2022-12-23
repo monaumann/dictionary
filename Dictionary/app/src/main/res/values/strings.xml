@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Dictionary</string>
     <string name="action_settings">Settings</string>
+    <string name="placeholder_with_colon">{0}:</string>
     <!-- Strings used for fragments for navigation -->
     <string name="verb_fragment_label">Verb Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

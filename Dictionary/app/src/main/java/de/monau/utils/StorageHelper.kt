@@ -1,6 +1,9 @@
 package de.monau.utils
 
-import android.content.Context
+import de.monau.constants.ESTAR
+import de.monau.constants.HABLAR
+import de.monau.constants.IR
+import de.monau.constants.SER
 import de.monau.models.Verb
 import javax.inject.Inject
 
@@ -9,12 +12,14 @@ class StorageHelper @Inject constructor(
     private val verbHelper: VerbHelper,
 ) {
 
-    fun writeLines(context: Context, lines: List<String>) =
-        fileHelper.writeLines(context, lines)
+    init { writeLines(listOf(HABLAR, SER, ESTAR, IR)) }
 
-    fun readVerbs(context: Context): List<Verb> {
+    fun writeLines(lines: List<String>) =
+        fileHelper.writeLines(lines)
+
+    fun readVerbs(): List<Verb> {
         val verbs = mutableListOf<Verb>()
-        for (line in fileHelper.readLines(context)) {
+        for (line in fileHelper.readLines()) {
             verbHelper.convert(line)
                 ?.let(verbs::add)
         }

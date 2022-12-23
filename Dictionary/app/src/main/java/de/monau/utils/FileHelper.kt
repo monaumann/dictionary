@@ -12,13 +12,15 @@ import javax.inject.Inject
 private const val PATH = "/dictionary"
 private const val FILENAME = "eng-es.txt"
 
-class FileHelper @Inject constructor() {
+class FileHelper @Inject constructor(
+    private val appContext: Context
+) {
 
-    fun writeLines(context: Context, lines: List<String>) =
-        context.getFile()?.writeLines(lines)
+    fun writeLines(lines: List<String>) =
+        appContext.getFile()?.writeLines(lines)
 
-    fun readLines(context: Context): List<String> =
-        context.getFile()?.readLines() ?: emptyList()
+    fun readLines(): List<String> =
+        appContext.getFile()?.readLines() ?: emptyList()
 }
 
 private fun Context.getFile(): File? {

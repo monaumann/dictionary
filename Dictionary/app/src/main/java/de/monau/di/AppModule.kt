@@ -7,4 +7,8 @@ import javax.inject.Named
 
 @Module
 class AppModule {
+
+    @Provides
+    fun provideAppContext(application: BaseApplication) =
+        application.applicationContext
 }

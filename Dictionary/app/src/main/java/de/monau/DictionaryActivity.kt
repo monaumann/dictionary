@@ -9,18 +9,12 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import dagger.android.support.DaggerAppCompatActivity
-import de.monau.constants.*
 import de.monau.databinding.ActivityDictionaryBinding
-import de.monau.utils.StorageHelper
-import javax.inject.Inject
 
 class DictionaryActivity : DaggerAppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityDictionaryBinding
-
-    @Inject
-    lateinit var storageHelper: StorageHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,9 +32,6 @@ class DictionaryActivity : DaggerAppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-
-        storageHelper.writeLines(this, listOf(HABLAR, SER, ESTAR, IR))
-        storageHelper.readVerbs(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -8,3 +8,6 @@ fun Any.assertEquals(any: Any) =
 
 fun Any?.assertNull() =
     assertNull(this)
+
+fun <T> Any.assertType(type: Class<T>) =
+    assertEquals(this.javaClass, type)

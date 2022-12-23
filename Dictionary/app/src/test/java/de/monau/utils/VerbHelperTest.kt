@@ -1,5 +1,6 @@
 package de.monau.utils
 
+import de.monau.examples.verbSER
 import de.monau.models.Verb
 import org.junit.Test
 
@@ -17,16 +18,7 @@ internal class VerbHelperTest {
 
     @Test
     fun `convert returns expected Verb for correct line`() {
-        val expectedVerb = Verb(
-            infinitiveEs = "SER",
-            yo = "soy",
-            tu = "eres",
-            el = "es",
-            nosotros = "somos",
-            vosotros = "sois",
-            ellos = "son",
-            type = "irregular",
-        )
+        val expectedVerb = verbSER
 
         tested.convert(CORRECT_LINE)!!
             .assertEquals(expectedVerb)

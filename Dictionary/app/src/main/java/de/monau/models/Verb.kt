@@ -1,5 +1,7 @@
 package de.monau.models
 
+typealias PersonConjugation = Pair<String, String>
+
 data class Verb(
     val infinitiveEs: String,
     val yo: String,

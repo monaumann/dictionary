@@ -21,11 +21,4 @@
         tools:listitem="@layout/item_verb_person"
         android:layout_marginBottom="@dimen/medium_margin" />
 
-    <TextView
-        android:id="@+id/type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Type"
-        tools:ignore="HardcodedText" />
-
 </androidx.appcompat.widget.LinearLayoutCompat>
