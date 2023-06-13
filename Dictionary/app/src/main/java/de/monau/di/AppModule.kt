@@ -1,5 +1,6 @@
 package de.monau.di
 
+import android.content.Context
 import dagger.Module
 import dagger.Provides
 import de.monau.BaseApplication
@@ -9,6 +10,6 @@ import javax.inject.Named
 class AppModule {
 
     @Provides
-    fun provideAppContext(application: BaseApplication) =
+    fun provideAppContext(application: BaseApplication): Context =
         application.applicationContext
 }

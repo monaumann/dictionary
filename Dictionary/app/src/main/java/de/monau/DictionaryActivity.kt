@@ -1,7 +1,6 @@
 package de.monau
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -11,10 +10,12 @@ import android.view.MenuItem
 import dagger.android.support.DaggerAppCompatActivity
 import de.monau.databinding.ActivityDictionaryBinding
 
-class DictionaryActivity : DaggerAppCompatActivity() {
+class DictionaryActivity : DaggerAppCompatActivity(), ToolbarHost {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityDictionaryBinding
+
+    override var toolbarTitle: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +28,7 @@ class DictionaryActivity : DaggerAppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+        toolbarTitle?.let { binding.toolbar.title = it }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

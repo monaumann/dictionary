@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import de.monau.adapters.ConjugationAdapter
 import de.monau.databinding.FragmentVerbBinding
 import de.monau.utils.StorageHelper
+import de.monau.utils.extensions.setToolbarTitle
 import javax.inject.Inject
 
 class VerbFragment : BindingDaggerFragment<FragmentVerbBinding>() {
@@ -28,19 +28,11 @@ class VerbFragment : BindingDaggerFragment<FragmentVerbBinding>() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.infinitive.setOnClickListener {
-            findNavController().navigate(R.id.action_VerbFragment_to_SecondFragment)
-        }
-    }
-
     private fun bindVerb() {
         val verb = storageHelper.readVerbs()[0]
         adapter.bind(verb)
-        binding.infinitive.text = "${verb.infinitiveEs} (${verb.type})"
         binding.recycler.layoutManager = LinearLayoutManager(context)
         binding.recycler.adapter = adapter
+        setToolbarTitle("${verb.infinitiveEs} (${verb.type})")
     }
 }
